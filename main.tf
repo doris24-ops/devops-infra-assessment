@@ -17,6 +17,16 @@ module "vpc" {
   private_subnet_cidr_blocks = var.private_subnet_cidr_blocks
 }
 ###############################
+## ECR MODULE
+###############################
+module "ecr" {
+  source            = "./modules/ecr"
+  service_repo_name = var.service_repo_name
+  project_name      = var.project_name
+  environment_name  = var.environment_name
+}
+
+###############################
 ## EKS MODULE
 ###############################
 module "eks" {

@@ -78,8 +78,6 @@ resource "aws_route_table_association" "public_subnet_association" {
 
 # Allocate Elastic IP for NAT gateway
 resource "aws_eip" "nat_eip" {
-  vpc = true
-
   tags = {
     Name = "${local.resource_name}-elastic-ip"
   }
